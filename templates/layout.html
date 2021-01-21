@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block metatags %}
+    {% endblock %}
+    <title>
+        {{ title if title else 'Flask Project' }}
+    </title>
+    {% from "macros.html" import load_node_module_js, load_node_module_css, top_nav_bar_macro, load_stylesheet %}
+    {{ load_node_module_css(filepath='bootstrap/dist/css/bootstrap.min.css') }}
+    {{ load_node_module_js(filepath='bootstrap/dist/js/bootstrap.bundle.min.js') }}
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Meddon&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    {% block styles %}
+        {{ load_stylesheet(filepath='stylesheets/layout.css') }}
+    {% endblock %}
+</head>
+<body>
+    {% block top_nav_bar %}
+        {{ top_nav_bar_macro() }}
+    {% endblock %}
+
+    {% block content %}
+    {% endblock %}
+
+    {% block javascript %}
+    {% endblock %}
+</body>
+</html>

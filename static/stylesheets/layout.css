@@ -1,0 +1,27 @@
+body {
+    /* background-color: maroon; */
+    background-color: rgb(33, 36, 40);
+}
+
+.navbar-brand {
+    font-family: 'Meddon', cursive;
+}
+
+.nav-link {
+    font-family: 'Shadows Into Light', cursive;
+    transition: all 0.2s ease-in-out;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+    font-size: 1.1rem;
+}
+
+.navbar {
+    min-height: 65px;
+}
+
+.unstyled-link {
+    text-decoration: none;
+
+}

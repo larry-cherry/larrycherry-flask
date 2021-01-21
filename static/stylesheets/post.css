@@ -1,0 +1,11 @@
+/* .post-card {
+    overflow: hidden;
+} */
+
+.post-image {
+    transition: filter .2s; 
+}
+
+.post-image:hover {
+    filter: blur(1px);
+}

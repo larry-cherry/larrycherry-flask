@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+{% from "macros.html" import load_stylesheet %}
+
+{% block styles %}
+    {{ load_stylesheet(filepath='stylesheets/layout.css') }}
+    {{ load_stylesheet(filepath='stylesheets/post.css') }}
+{% endblock %}
+
+{% block content %}
+{% from 'posts/macros.html' import post_card %}
+    <div class="container d-flex justify-content-center">
+        {% for post in posts %}
+        <div class='row'>
+            <div class="col-xs col-sm col-lg d-flex justify-content-center">
+                {{post_card(post)}}
+            </div>
+            <div class="col-xs col-sm col-lg d-flex justify-content-center">
+                {{post_card(post)}}
+            </div>
+            <div class="col-xs col-sm col-lg d-flex justify-content-center">
+                {{post_card(post)}}
+            </div>
+  
+  
+            <div class="col-xs col-sm col-lg d-flex justify-content-center">
+                {{post_card(post)}}
+            </div>
+            <div class="col-xs col-sm col-lg d-flex justify-content-center">
+                {{post_card(post)}}
+            </div>
+            <div class="col-xs col-sm col-lg d-flex justify-content-center">
+                {{post_card(post)}}
+            </div>
+ 
+        </div>
+    
+        {% endfor %}
+  </div>
+{% endblock %}

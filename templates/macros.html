@@ -1,0 +1,41 @@
+{% macro get_image(tags) %}
+   <img src="https://source.unsplash.com/1600x900/?{{tags}}">
+{% endmacro %}
+
+{% macro load_node_module_js(filepath) %}
+    <script src='{{ url_for("custom_static", filename=filepath) }}'></script>
+{% endmacro %}
+
+{% macro load_node_module_css(filepath) %}
+    <link rel="stylesheet" type="text/css" href='{{ url_for("custom_static", filename=filepath) }}'/>
+{% endmacro %}
+
+{% macro top_nav_bar_macro() %}
+    {% set endpoint = request.endpoint %}
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="{{ url_for('home_page') }}">Larry Cherry</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-end">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Projects</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://www.linkedin.com/in/larry-cherry/">LinkedIn</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://github.com/larry-cherry">GitHub</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+{% endmacro %}
+
+
+{% macro load_stylesheet(filepath) %}
+      <link rel="stylesheet" type="text/css" href='{{ url_for("static", filename=filepath) }}' />
+{% endmacro %}
